@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Number</title>
+    <link rel="shortcut icon" href="click.png" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+        }
+        .container {
+            text-align: center;
+        }
+        .number {
+            font-size: 4.5rem;
+            margin: 20px 0;
+        }
+        h2{
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number" id="number">0</div>
+        <h2>Clic Space Button</h2>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function incrementNumber() {
+            count++;
+            document.getElementById('number').textContent = count;
+        }
+
+        document.addEventListener('keyup', (event) => {
+            if (event.code === 'Space') {
+                incrementNumber();
+                event.preventDefault(); // Prevents the page from scrolling
+            }
+        });
+    </script>
+</body>
+</html>
